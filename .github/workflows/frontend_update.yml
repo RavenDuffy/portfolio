@@ -22,7 +22,7 @@ jobs:
         run: yarn lint
       - name: test
         uses: cypress-io/github-action@v2
-        working-directory: ./portfolio_front
         with:
+          working-directory: ./portfolio_front
           build: yarn build
           start: yarn start
