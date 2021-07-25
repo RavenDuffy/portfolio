@@ -8,19 +8,19 @@ on:
 jobs:
   deploy_pipe:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./portfolio_front
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
       - name: yarn install
-        working-directory: ./portfolio_front
         run: yarn install
       - name: lint
-        working-directory: ./portfolio_front
         run: yarn lint
       - name: test
-        working-directory: ./portfolio_front
         uses: cypress-io/github-action@v2
         with:
           build: yarn build
