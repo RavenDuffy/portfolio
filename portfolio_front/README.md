@@ -14,5 +14,5 @@ docker build --pull --rm -f "portfolio_front\Dockerfile" -t portfolio:latest "po
 Execute the docker image using:
 
 ```powershell
-docker run --rm -d  -p 3000:3000/tcp portfolio:latest
+docker run --rm -d  -p 80:3000/tcp portfolio:latest
 ```
