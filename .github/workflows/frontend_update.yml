@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: "16.x"
       - name: print dir
-        run: ls -l
+        run: |
+          cd /home/runner/work/portfolio/portfolio/
+          ls
       - name: npm install
         run: npm install
       - name: lint
