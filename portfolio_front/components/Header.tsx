@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import defaultImage from '/public/images/logo/Magpie512.png'
 
 interface HeaderProps {
@@ -22,7 +21,7 @@ export const Header = ({ headTitle, prevImage }: HeaderProps) => {
             <meta property="og:title" content={pageTitle} key="title" />
             <meta property="og:type" content="website" />
             <meta property="og:image" content={previewImage.src} />
-            <meta property="og:url" content={useRouter().asPath} />
+            <meta property="og:url" content={window.location.href} />
         </Head>
     )
 }
