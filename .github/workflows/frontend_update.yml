@@ -14,15 +14,14 @@ jobs:
         with:
           node-version: '16.x'
       - name: yarn install
-        run: |
-          cd ./portfolio_front
-          yarn install
+        working-directory: ./portfolio_front
+        run: yarn install
       - name: lint
-        run: |
-          cd ./portfolio_front
-          yarn lint
+        working-directory: ./portfolio_front
+        run: yarn lint
       - name: test
         uses: cypress-io/github-action@v2
+        working-directory: ./portfolio_front
         with:
           build: yarn build
           start: yarn start
