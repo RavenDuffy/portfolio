@@ -18,6 +18,10 @@ jobs:
           cd /home/runner/work/portfolio/portfolio/
           ls
       - name: npm install
-        run: npm install
+        run: |
+          cd ./portfolio_front
+          npm install
       - name: lint
-        run: npm run eslint
+        run: |
+          cd ./portfolio_front
+          npm run eslint
