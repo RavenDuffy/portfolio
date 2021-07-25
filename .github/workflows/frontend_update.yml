@@ -22,8 +22,7 @@ jobs:
           cd ./portfolio_front
           yarn lint
       - name: test
-        run: |
-          cd ./portfolio_front
-          yarn build
-          yarn start
-          yarn cypress:headless
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build
+          start: yarn start
