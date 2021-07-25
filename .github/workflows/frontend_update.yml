@@ -13,16 +13,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-      - name: npm install
+      - name: yarn install
         run: |
           cd ./portfolio_front
-          npm install
+          yarn install
       - name: lint
         run: |
           cd ./portfolio_front
-          npm run lint
+          yarn lint
       - name: test
         run: |
           cd ./portfolio_front
-          npm run dev
-          npm run cypress:headless
+          yarn build
+          yarn start
+          yarn cypress:headless
