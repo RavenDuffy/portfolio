@@ -24,4 +24,4 @@ jobs:
       - name: lint
         run: |
           cd ./portfolio_front
-          npm run eslint
+          npm run lint
