@@ -1,4 +1,4 @@
-name: Hello World!
+name: Frontend Update
 
 on:
   push:
@@ -6,18 +6,8 @@ on:
       - main
 
 jobs:
-  hello_world_job:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Say hello
-        run: |
-          echo "Hello World!"
-      - name: Date and directory
-        run: |
-          echo date
-          echo ls -l
   deploy_pipe:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
