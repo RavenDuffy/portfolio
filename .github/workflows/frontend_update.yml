@@ -20,8 +20,8 @@ jobs:
         working-directory: ./portfolio_front
         run: yarn lint
       - name: test
-        uses: cypress-io/github-action@v2
         working-directory: ./portfolio_front
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build
           start: yarn start
