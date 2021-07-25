@@ -24,4 +24,5 @@ jobs:
       - name: test
         run: |
           cd ./portfolio_front
+          npm run dev
           npm run cypress:headless
