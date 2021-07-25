@@ -23,8 +23,8 @@ jobs:
       - name: cd
         run: ls
       - name: test
-        run: cd ./portfolio_front
         uses: cypress-io/github-action@v2
         with:
+          run: cd ./portfolio_front
           build: yarn build
           start: yarn start
