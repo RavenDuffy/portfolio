@@ -20,6 +20,8 @@ jobs:
         run: yarn install
       - name: lint
         run: yarn lint
+      - name: cd
+        run: ls
       - name: test
         uses: cypress-io/github-action@v2
         with:
