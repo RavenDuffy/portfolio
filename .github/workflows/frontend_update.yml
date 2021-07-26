@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy_pipe:
+  staging_pipe:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,3 +29,11 @@ jobs:
           command: yarn cypress:e2e
           start: yarn start
           wait-on: http://localhost:3000
+  deploy_pipe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./portfolio_front
+    steps:
+      - uses: actions/docker/cli@master
+        args: ["build", "-t --pull --rm -f", "'portfolio_front\Dockerfile' -t portfolio:latest 'portfolio_front'"]
