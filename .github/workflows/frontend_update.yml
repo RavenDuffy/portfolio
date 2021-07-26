@@ -30,6 +30,7 @@ jobs:
           start: yarn start
           wait-on: http://localhost:3000
   deploy_pipe:
+    needs: staging_pipe
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -44,5 +45,4 @@ jobs:
           context: ./portfolio_front
           file: ./portfolio_front/Dockerfile
           push: true
-          # target: magpiedocker/portfolio
           tags: magpiedocker/portfolio:latest
