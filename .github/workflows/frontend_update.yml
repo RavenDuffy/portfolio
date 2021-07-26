@@ -31,9 +31,6 @@ jobs:
           wait-on: http://localhost:3000
   deploy_pipe:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./portfolio_front
     steps:
       - uses: actions/checkout@v2
       - name: docker login
