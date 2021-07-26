@@ -39,4 +39,4 @@ jobs:
       - name: build container
         uses: actions/docker/cli@master
       - name: build contents
-      - run: docker --version
+        run: docker --version
