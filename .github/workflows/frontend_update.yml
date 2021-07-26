@@ -31,6 +31,9 @@ jobs:
           wait-on: http://localhost:3000
   deploy_pipe:
     runs-on: ubuntu-latest
+    env:
+      $DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      $DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - uses: actions/checkout@v2
       - name: docker login
