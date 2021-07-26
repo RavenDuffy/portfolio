@@ -35,5 +35,8 @@ jobs:
       run:
         working-directory: ./portfolio_front
     steps:
+      - uses: actions/checkout@master
+
+      - name: build container
       - uses: actions/docker/cli@master
-        args: ["build", "--pull --rm -f", "'portfolio_front\Dockerfile' -t portfolio:latest 'portfolio_front'", "."]
+        run: docker --version
