@@ -36,7 +36,7 @@ jobs:
         working-directory: ./portfolio_front
     steps:
       - uses: actions/checkout@master
-
       - name: build container
-      - uses: actions/docker/cli@master
-        run: docker --version
+        uses: actions/docker/cli@master
+      - name: build contents
+      - run: docker --version
