@@ -41,6 +41,7 @@ jobs:
       - name: docker build
         uses: docker/build-push-action@v2
         with:
+          context: ./portfolio_front
           file: ./portfolio_front/Dockerfile
           push: true
           tags: portfolio:latest
