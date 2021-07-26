@@ -38,8 +38,7 @@ jobs:
       - name: docker build
         run: |
           ls
-          docker container ls
-          docker build --pull --rm -f "portfolio_front\Dockerfile" -t portfolio:latest "portfolio_front"
+          docker build --pull --rm -f "./portfolio_front/Dockerfile" -t portfolio:latest "./portfolio_front"
       - name: tag container
         run: docker tag portfolio:latest portfolio:1.0
       - name: push image
