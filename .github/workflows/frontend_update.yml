@@ -45,4 +45,4 @@ jobs:
           file: ./portfolio_front/Dockerfile
           push: true
           # target: magpiedocker/portfolio
-          tags: localhost:3000:latest
+          tags: magpiedocker/portfolio:latest
