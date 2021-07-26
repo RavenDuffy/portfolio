@@ -36,4 +36,4 @@ jobs:
         working-directory: ./portfolio_front
     steps:
       - uses: actions/docker/cli@master
-        args: ["build", "-t --pull --rm -f", "'portfolio_front\Dockerfile' -t portfolio:latest 'portfolio_front'"]
+        args: ["build", "--pull --rm -f", "'portfolio_front\Dockerfile' -t portfolio:latest 'portfolio_front'", "."]
