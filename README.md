@@ -1,6 +1,6 @@
 # Portfolio
 
-My portfolio website.
+My portfolio [website](ravenduffy.io).
 
 ## Structure
 
@@ -12,4 +12,38 @@ My portfolio website.
 
 If you'd like to fork or further develop this repo there are a few prerequisites listed in the next section.
 
-### Getting setup
+## Tips
+
+### Correct git flow
+
+- Pull repo
+
+```bash
+git clone https://github.com/RavenDuffy/portfolio.git
+```
+
+- Make sure everything is up to date
+
+```bash
+git checkout development
+git pull origin development
+```
+
+- Create a new branch
+
+```bash
+git checkout -b [working-branch-name]
+```
+
+- Keep your branch up to date
+
+```bash
+git pull origin [working-branch-name]
+```
+
+- Push your changes
+
+```bash
+git merge origin development
+git push origin development
+```
