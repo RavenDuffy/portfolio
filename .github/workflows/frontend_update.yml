@@ -32,10 +32,10 @@ jobs:
           command: yarn cypress:e2e
           start: yarn start
           wait-on: http://localhost:3000
-  if: ${{ github.event_name == 'push' }}
   deploy_pipe:
     needs: staging_pipe
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v2
       - name: docker login
