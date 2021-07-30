@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   staging_pipe:
@@ -29,6 +32,7 @@ jobs:
           command: yarn cypress:e2e
           start: yarn start
           wait-on: http://localhost:3000
+  if: ${{ github.event_name == 'push' }}
   deploy_pipe:
     needs: staging_pipe
     runs-on: ubuntu-latest
