@@ -14,13 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: github context
-        env: GITHUB_CONTEXT: ${{ toJson(github) }}
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: commits
-        env: COMMITS: ${{ toJson(github.event.commits) }}
+        env:
+          COMMITS: ${{ toJson(github.event.commits) }}
         run: echo "$COMMITS"
       - name: commit messages
-        env: COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+        env:
+          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
   staging_pipe:
     needs: skip_pipe
