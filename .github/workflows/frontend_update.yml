@@ -10,7 +10,6 @@ on:
 
 jobs:
   staging_pipe:
-    needs: skip_pipe
     runs-on: ubuntu-latest
     defaults:
       run:
