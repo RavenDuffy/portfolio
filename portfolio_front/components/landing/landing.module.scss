@@ -29,4 +29,12 @@
         font-size: 128px;
         font-weight: 400;
     }
+
+    .more {
+        font-size: 1.5rem;
+        color: var(--main-grey);
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+    }
 }
