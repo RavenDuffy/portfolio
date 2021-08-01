@@ -25,3 +25,7 @@ button {
   box-shadow: unset;
   text-shadow: unset;
 }
+
+button:focus {
+  outline: none;
+}

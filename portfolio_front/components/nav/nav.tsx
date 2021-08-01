@@ -15,9 +15,7 @@ export const Navbar = () => {
 
             {width && width > 620 
                 ? <NavLinks /> 
-                : <Hamburger>
-                    <NavLinks isMobile />
-                </Hamburger>
+                : <Hamburger />
             }
         </div>
     )
