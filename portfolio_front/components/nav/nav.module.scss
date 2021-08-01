@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+
+    h1, h2 {
+        text-transform: uppercase;
+        margin: 0 2rem;
+    }
+
+    h1 {
+        font-weight: bolder;
+        color: var(--main-highlight);
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 1rem;
+
+        h2 {
+            font-weight: 500;
+            color: var(--main-grey);
+        }
+    }
+}
