@@ -6,7 +6,6 @@ export default function Home() {
     <>
       <Header />
       <Navbar />
-      Test
     </>
   )
 }
