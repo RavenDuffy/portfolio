@@ -5,8 +5,10 @@ interface SectionProps {
     children?: React.ReactNode
 }
 
-export const Section = (props: SectionProps) => {
-    <div id={props.sectionName} style={{ minHeight: 'calc(100vh - 3rem)' }}>
-        {props.children}
-    </div >
+export const Section: React.FC<SectionProps & React.HTMLAttributes<HTMLDivElement>> = (props) => {
+    return (
+        <div id={props.sectionName} style={{ minHeight: 'calc(100vh - 6.7rem)' }} className={props.className}>
+            {props?.children}
+        </div >
+    )
 }

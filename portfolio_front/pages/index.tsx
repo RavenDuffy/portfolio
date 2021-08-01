@@ -1,11 +1,9 @@
-import { Header } from "../components/header"
-import { Navbar } from "../components/nav/nav"
+import { HomeLayout } from "../components/layouts/home-layout"
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Navbar />
+      <HomeLayout />
     </>
   )
 }
