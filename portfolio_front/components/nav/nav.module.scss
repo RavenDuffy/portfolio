@@ -49,4 +49,21 @@ $main-focus-back: #20282B;
             margin-top: 1.5rem;
         }
     }
+
+    .hamClosed, .hamOpen {
+        height: 30px;
+        width: 30px;
+        margin: auto;
+        margin-right: 1rem;
+        background: no-repeat center;
+        z-index: 1;
+    }
+
+    .hamClosed {
+        background-image: url('../../public/images/HamburgerClosed.svg');
+    }
+
+    .hamOpen {
+        background-image: url('../../public/images/HamburgerOpen.svg');
+    }
 }

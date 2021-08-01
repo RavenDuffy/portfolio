@@ -15,3 +15,13 @@ body {
   font-family: Roboto, sans-serif;
   background-color: var(--main-back);
 }
+
+button {
+  background: unset;
+  border: unset;
+  color: unset;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: unset;
+  text-shadow: unset;
+}

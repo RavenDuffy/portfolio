@@ -5,7 +5,7 @@ interface NavLinksProps {
     isMobile?: boolean
 }
 
-export const NavLinks = ({isMobile}: NavLinksProps) => {
+export const NavLinks = ({ isMobile }: NavLinksProps) => {
     return (
         <div className={!isMobile ? styles.links : styles.linksMobile}>
             <Link href="#" passHref>
