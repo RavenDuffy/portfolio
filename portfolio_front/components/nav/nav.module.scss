@@ -1,7 +1,10 @@
+// hacky fix for varible opacity
+$main-focus-back: #20282B;
+
 .navbar {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 1.5rem 0;
 
@@ -23,6 +26,27 @@
         h2 {
             font-weight: 500;
             color: var(--main-grey);
+        }
+    }
+
+    .linksMobile {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba($main-focus-back, 0.95);
+
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: var(--main-grey);
+        }
+
+        h2:first-child {
+            margin-top: 1.5rem;
         }
     }
 }

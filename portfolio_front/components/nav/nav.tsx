@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useWindowSize } from '../../hooks/useWindowSize'
+import { NavLinks } from './links'
 import styles from './nav.module.scss'
 
 export const Navbar = () => {
@@ -10,17 +11,11 @@ export const Navbar = () => {
             <Link href="#" passHref>
                 <h1 className={styles.home}>RD</h1>
             </Link>
-            <div className={styles.links}>
-                <Link href="#" passHref>
-                    <h2>About</h2>
-                </Link>
-                <Link href="#" passHref>
-                    <h2>Projects</h2>
-                </Link>
-                <Link href="#" passHref>
-                    <h2>Contact</h2>
-                </Link>
-            </div>
+
+            {windowSize.width && windowSize.width > 620 
+                ? <NavLinks /> 
+                : <NavLinks isMobile />
+            }
         </div>
     )
 }
