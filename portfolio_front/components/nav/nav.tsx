@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { useWindowSize } from '../../hooks/useWindowSize'
+import { Hamburger } from './hamburger'
 import { NavLinks } from './links'
 import styles from './nav.module.scss'
 
 export const Navbar = () => {
-    const windowSize = useWindowSize()
+    const { width } = useWindowSize()
 
     return (
         <div id="navbar" className={styles.navbar}>
@@ -12,9 +13,11 @@ export const Navbar = () => {
                 <h1 className={styles.home}>RD</h1>
             </Link>
 
-            {windowSize.width && windowSize.width > 620 
+            {width && width > 620 
                 ? <NavLinks /> 
-                : <NavLinks isMobile />
+                : <Hamburger>
+                    <NavLinks isMobile />
+                </Hamburger>
             }
         </div>
     )
