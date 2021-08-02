@@ -45,6 +45,10 @@ $main-back: #151D1F;
         flex-direction: column;
         align-items: flex-end;
 
+        h1, h2 {
+            padding: unset;
+        }
+
         h2 {
             margin-bottom: 1.5rem;
             font-weight: 500;
