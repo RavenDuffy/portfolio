@@ -1,5 +1,6 @@
 // hacky fix for varible opacity
 $main-focus-back: #20282B;
+$main-back: #151D1F;
 
 .navbar {
     display: flex;
@@ -7,10 +8,16 @@ $main-focus-back: #20282B;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1.5rem 0;
+    z-index: 99;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to top, rgba($main-back, 0), rgba($main-back, 1));
 
     h1, h2 {
         text-transform: uppercase;
         margin: 0 2rem;
+        text-shadow: 1px 1px 5px var(--main-back);
+        cursor: pointer;
     }
 
     h1 {
@@ -60,7 +67,6 @@ $main-focus-back: #20282B;
         margin: 1.5rem 0;
         margin-right: 2rem;
         background: no-repeat center;
-        z-index: 1;
     }
 
     .hamClosed {
