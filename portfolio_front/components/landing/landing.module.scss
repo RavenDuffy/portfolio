@@ -43,6 +43,12 @@ $medium: 920px;
         position: absolute;
         bottom: 2rem;
         right: 2rem;
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 0.5rem;
+        }
     }
 
     @media screen and (max-width: $medium) {
