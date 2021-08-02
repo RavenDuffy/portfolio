@@ -82,6 +82,7 @@ $medium: 920px;
     }
 
     @media screen and (max-width: $x-small) {
+        margin-top: 0;
         justify-content: flex-start;
 
         h1 {
@@ -100,9 +101,5 @@ $medium: 920px;
             margin-left: -0.4rem;
             font-size: 38px;
         }
-    }
-
-    @media screen and (max-width: $xxx-small) {
-        margin-top: 0;
     }
 }
