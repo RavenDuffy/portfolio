@@ -7,17 +7,17 @@ $main-back: #151D1F;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 1.5rem 0;
     z-index: 99;
     position: sticky;
     top: 0;
-    background: linear-gradient(to top, rgba($main-back, 0), rgba($main-back, 1));
+    background: linear-gradient(to top, rgba($main-back, 0), rgba($main-back, 1) 5%);
 
     h1, h2 {
         text-transform: uppercase;
         margin: 0 2rem;
         text-shadow: 1px 1px 5px var(--main-back);
         cursor: pointer;
+        padding: 1.5rem 0;
     }
 
     h1 {
@@ -27,7 +27,6 @@ $main-back: #151D1F;
     .links {
         display: flex;
         flex-direction: row;
-        align-items: center;
         margin-right: 1rem;
         margin: auto 0;
 
