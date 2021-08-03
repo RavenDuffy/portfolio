@@ -14,10 +14,22 @@ export const About = () => {
                 in contact for small projects.</p>
             <DescBoxWrapper>
                 <DescBox imageName="DevFront.svg" imageWidth="96">
-                    
+                    <h3>Frontend Dev</h3>
+                    <p>The frontend space is one of the most rewarding places to work and I love every minute of it. 
+                        I’ve been building websites for years using a wide range of technologies.</p>
+                    <h4>Languages I use:</h4>
+                    <p>HTML, CSS, SASS, JavaScript, TypeScript</p>
+                    <h4>My favourite frameworks:</h4>
+                    <p>React, Next.js, Node.js, Cypress, Selenium</p>
                 </DescBox>
                 <DescBox imageName="DevBack.svg" imageWidth="96">
-                    
+                    <h3>Backend Dev</h3>
+                    <p>Backend is where I started my development journey. I have a huge range of experience 
+                        including: machine learning, test suites, APIs, pipelining and much more. </p>
+                    <h4>Languages I use:</h4>
+                    <p>JavaScript, TypeScript, Python, Elixir, Java, C++</p>
+                    <h4>My favourite libraries:</h4>
+                    <p>Express, Mongoose, Axios, Mocha/chai</p>
                 </DescBox>
             </DescBoxWrapper>
         </Section>

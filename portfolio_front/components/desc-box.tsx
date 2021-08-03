@@ -12,7 +12,7 @@ interface DescBoxWrapperProps {
     children?: React.ReactNode
 }
 
-// imageWidth and imageHeight should never exceed 100
+// imageHeight should always be 96
 export const DescBox = ({imageName, imageWidth, imageHeight, children}: DescBoxProps) => {
     
 
@@ -27,7 +27,7 @@ export const DescBox = ({imageName, imageWidth, imageHeight, children}: DescBoxP
                     height={imageHeight || imageWidth ? imageWidth : '0'}
                 />
             </div>}
-            <div>{children}</div>
+            <div className={styles.descText}>{children}</div>
         </div>
     )
 }
