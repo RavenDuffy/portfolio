@@ -12,7 +12,6 @@ export const Section: React.FC<SectionProps & React.HTMLAttributes<HTMLDivElemen
             id={props.sectionName} 
             style={{ 
                 minHeight: '100vh', 
-                // marginBottom: '5.5rem',
                 maxWidth: props.isWidthCapped ? '946px' : 'unset',
             }} 
             className={props.className}

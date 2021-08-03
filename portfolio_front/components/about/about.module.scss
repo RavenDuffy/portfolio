@@ -1,7 +1,18 @@
+$x-small: 540px;
+
 .header {
     font-size: 48px;
 }
 
 .blurb {
     font-size: 30px;
+}
+
+@media screen and (max-width: $x-small) {
+    .header {
+        font-size: 40px;
+    }
+    .blurb {
+        font-size: 22px;
+    }
 }
