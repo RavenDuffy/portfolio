@@ -8,7 +8,10 @@ $x-small: 540px;
     font-size: 30px;
 }
 
+.header, .blurb { text-align: center; }
+
 @media screen and (max-width: $x-small) {
+    .header, .blurb { text-align: initial; }
     .header {
         font-size: 40px;
     }
