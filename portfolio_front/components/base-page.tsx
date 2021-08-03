@@ -5,12 +5,17 @@ interface BasePageProps {
 }
 
 export const BasePage = (props: BasePageProps) => {
-    return (
-        <>
-          <Header />
-          <div style={{padding: '0 2rem'}}>
-            {props.children}
-          </div>
-        </>
-      )
+  return (
+    <>
+      <Header />
+      <div id="page" style={{
+        padding: '0 0.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}>
+        {props.children}
+      </div>
+    </>
+  )
 }

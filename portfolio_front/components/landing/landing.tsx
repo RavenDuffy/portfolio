@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Section } from "../section"
 import styles from './landing.module.scss'
 import ArrowDown from '../../public/images/Arrow.svg'
+import { scrollToElement } from "../../utils/scroll-to-element"
 
 export const Landing = () => {
     return (
@@ -10,7 +11,7 @@ export const Landing = () => {
             <h1>RAVEN</h1>
             <h1>DUFFY</h1>
             <h2>Web Developer</h2>
-            <Link href="#" passHref>
+            <button onClick={() => scrollToElement('about')}>
                 <div className={styles.more}>
                     <span >FIND OUT MORE</span>
                     <Image 
@@ -18,7 +19,7 @@ export const Landing = () => {
                         src={ArrowDown}
                     />
                 </div>
-            </Link>
+            </button>
         </Section>
     )
 }
