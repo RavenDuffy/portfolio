@@ -6,6 +6,7 @@
   --main-back: #151D1F;
   --main-white: #FFFFFF;
   --main-grey: #D4D4D4;
+  --scroll-grey: #697174;
 }
 
 html,
@@ -14,6 +15,25 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
   background-color: var(--main-back);
+}
+
+* { /* Firefox styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-grey);
+  color: #fff;
+}
+
+::-webkit-scrollbar { /* Everyone else */
+  overflow: overlay;
+  width: 8px
+}
+
+::-webkit-scrollbar-track {
+  display: initial;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-grey);
 }
 
 button {
