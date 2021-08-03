@@ -1,7 +1,7 @@
-import { About } from "../about/about"
 import { BasePage } from "../base-page"
-import { Landing } from "../landing/landing"
 import { Navbar } from "../nav/nav"
+import { Landing } from "../landing/landing"
+import { About } from "../about/about"
 
 export const HomeLayout = () => {
     return (
