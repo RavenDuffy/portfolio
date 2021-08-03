@@ -1,8 +1,7 @@
 $xxx-small: 360px;
-$xx-small: 420px;
 $x-small: 540px;
 $small: 690px;
-$medium: 920px;
+$medium: 1020px;
 
 .landing {
     width: 100%;
@@ -11,11 +10,11 @@ $medium: 920px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -1rem;
+    margin-top: -5.5rem;
 
-    h1, h2 {
-        margin: 0;
-    }
+    button { font-weight: 400; }
+
+    h1, h2 { margin: 0; }
 
     h1 {
         color: var(--main-white);
@@ -83,6 +82,7 @@ $medium: 920px;
     }
 
     @media screen and (max-width: $x-small) {
+        margin-top: 0;
         justify-content: flex-start;
 
         h1 {
