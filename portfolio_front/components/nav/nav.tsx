@@ -5,18 +5,15 @@ import { NavLinks } from './links'
 import styles from './nav.module.scss'
 
 export const Navbar = () => {
-    const { width } = useWindowSize()
+  const { width } = useWindowSize()
 
-    return (
-        <div id="navbar" className={styles.navbar}>
-            <Link href="#" passHref>
-                <h1 className={styles.home}>RD</h1>
-            </Link>
+  return (
+    <div id='navbar' className={styles.navbar}>
+      <Link href='/' passHref>
+        <h1 className={styles.home}>RD</h1>
+      </Link>
 
-            {width && width > 620 
-                ? <NavLinks /> 
-                : <Hamburger />
-            }
-        </div>
-    )
+      {width && width > 620 ? <NavLinks /> : <Hamburger />}
+    </div>
+  )
 }
