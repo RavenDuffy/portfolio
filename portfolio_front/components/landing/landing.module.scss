@@ -11,6 +11,8 @@ $medium: 1020px;
   justify-content: center;
   align-items: center;
   margin-top: -5.5rem;
+  position: relative;
+  min-height: 100vh;
 
   button {
     font-weight: 400;
@@ -71,6 +73,7 @@ $medium: 1020px;
   }
 
   @media screen and (max-width: $small) {
+    min-height: calc(100vh) !important;
     h1 {
       font-size: 150px;
       line-height: 8rem;
@@ -89,6 +92,7 @@ $medium: 1020px;
   }
 
   @media screen and (max-width: $x-small) {
+    min-height: calc(100vh - 5.5rem) !important;
     margin-top: 0;
     justify-content: flex-start;
 
