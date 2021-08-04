@@ -11,6 +11,8 @@ $medium: 1020px;
     justify-content: center;
     align-items: center;
     margin-top: -5.5rem;
+    pointer-events: none;
+    user-select: none;
 
     button { font-weight: 400; }
 
