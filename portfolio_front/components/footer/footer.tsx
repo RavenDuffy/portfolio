@@ -9,19 +9,27 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.images}>
-        <Link href='https://github.com/RavenDuffy' passHref>
+        <a
+          href='https://github.com/RavenDuffy'
+          target='_blank'
+          rel='noreferrer'
+        >
           <Image className={styles.imageLink} alt='git' src={GitLink} />
-        </Link>
-        <Link href='mailto:ravend2013@gmail.com' passHref>
+        </a>
+        <a href='mailto:ravend2013@gmail.com' target='_blank' rel='noreferrer'>
           <Image className={styles.imageLink} alt='email' src={EmailLink} />
-        </Link>
-        <Link href='https://linkedin.com/in/ravenduffy/' passHref>
+        </a>
+        <a
+          href='https://linkedin.com/in/ravenduffy/'
+          target='_blank'
+          rel='noreferrer'
+        >
           <Image
             className={styles.imageLink}
             alt='linkedin'
             src={LinkedinLink}
           />
-        </Link>
+        </a>
       </div>
     </footer>
   )

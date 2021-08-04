@@ -8,19 +8,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 3px solid var(--main-grey);
   background-color: var(--main-focus-back);
 
   .images {
     margin: 15px 0;
     width: 30vw;
-    min-width: 250px;
+    min-width: 350px;
     max-width: 400px;
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-self: center;
+
+    a img {
+      height: 40px;
+    }
   }
 
   .imageLink {
@@ -31,4 +34,15 @@
     transition: 0.4s;
     filter: invert(0.3) sepia(1) hue-rotate(20deg);
   }
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: calc(100% - 180px);
+  min-width: 240px;
+  border-top: 3px solid var(--main-grey);
+  transform: translate(-50%, 0);
 }
