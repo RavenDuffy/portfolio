@@ -6,6 +6,7 @@ interface DescBoxProps {
   imageName?: string
   imageWidth?: string
   imageHeight?: string
+  full?: boolean
   children?: React.ReactNode
 }
 
@@ -19,6 +20,7 @@ export const DescBox = ({
   imageName,
   imageWidth,
   imageHeight,
+  full,
   children,
 }: DescBoxProps) => {
   return (
@@ -33,7 +35,12 @@ export const DescBox = ({
           />
         </div>
       )}
-      <div className={styles.descText}>{children}</div>
+      <div
+        className={styles.descText}
+        style={(full && { width: '100%', height: '100%' }) || {}}
+      >
+        {children}
+      </div>
     </div>
   )
 }

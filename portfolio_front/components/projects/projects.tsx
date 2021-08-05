@@ -1,6 +1,9 @@
 import { DescBox, DescBoxWrapper } from '../desc-box'
 import { Section } from '../section'
+import { ProjectPreview } from './project-prev'
 import styles from './projects.module.scss'
+
+import logo from '../../public/images/logo/Magpie.png'
 
 export const Projects = () => {
   return (
@@ -10,10 +13,18 @@ export const Projects = () => {
         <hr />
       </div>
       <DescBoxWrapper style={{ maxWidth: '1000px' }}>
-        <DescBox>[project]</DescBox>
-        <DescBox>[project]</DescBox>
-        <DescBox>[project]</DescBox>
-        <DescBox>[project]</DescBox>
+        <DescBox full>
+          <ProjectPreview name={'hello'} image={logo} />
+        </DescBox>
+        <DescBox full>
+          <ProjectPreview name={'hello'} image={logo} />
+        </DescBox>
+        <DescBox full>
+          <ProjectPreview name={'hello'} image={logo} />
+        </DescBox>
+        <DescBox full>
+          <ProjectPreview name={'hello'} image={logo} />
+        </DescBox>
       </DescBoxWrapper>
     </Section>
   )
