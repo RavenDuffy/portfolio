@@ -16,16 +16,16 @@ export const Projects = () => {
       </div>
       <DescBoxWrapper style={{ maxWidth: '1000px' }}>
         <DescBox full>
-          <ProjectPreview name={'hello'} image={logo} />
+          <ProjectPreview name={'hello'} image={logo.src} />
         </DescBox>
         <DescBox full>
-          <ProjectPreview name={'hello'} image={logo} />
+          <ProjectPreview name={'hello'} image={logo.src} />
         </DescBox>
         <DescBox full>
-          <ProjectPreview name={'hello'} image={logo} />
+          <ProjectPreview name={'hello'} image={logo.src} />
         </DescBox>
         <DescBox full>
-          <ProjectPreview name={'hello'} image={logo} />
+          <ProjectPreview name={'hello'} image={logo.src} />
         </DescBox>
       </DescBoxWrapper>
     </Section>
