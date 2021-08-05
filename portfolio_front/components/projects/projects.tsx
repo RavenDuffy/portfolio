@@ -7,10 +7,12 @@ import logo from '../../public/images/logo/Magpie.png'
 
 export const Projects = () => {
   return (
-    <Section sectionName='projects'>
-      <h1>My Projects</h1>
-      <div className={styles.hrWrap}>
-        <hr />
+    <Section sectionName='projects' id='projects' isWidthCapped>
+      <div className={styles.titleWrap}>
+        <h1>My Projects</h1>
+        <div className={styles.hrWrap}>
+          <hr />
+        </div>
       </div>
       <DescBoxWrapper style={{ maxWidth: '1000px' }}>
         <DescBox full>

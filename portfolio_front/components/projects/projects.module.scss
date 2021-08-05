@@ -1,2 +1,18 @@
-.hrWrap {
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-weight: 500;
+  }
+
+  .hrWrap {
+    width: 11ch;
+
+    hr {
+      margin: 0;
+    }
+  }
 }
