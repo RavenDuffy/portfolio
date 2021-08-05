@@ -13,6 +13,7 @@ export const ProjectPreview = ({ name, image, style }: ProjectPreviewProps) => {
         backgroundSize: 'cover',
         width: '100%',
         height: '100%',
+        borderRadius: '10px',
       }}
     >
       <p>{name}</p>
