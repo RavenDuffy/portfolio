@@ -2,16 +2,24 @@ interface ProjectPreviewProps {
   name: string
   image?: string
   link?: string
+  backColor?: string
 }
 
-export const ProjectPreview = ({ name, image, link }: ProjectPreviewProps) => {
+export const ProjectPreview = ({
+  name,
+  image,
+  link,
+  backColor,
+}: ProjectPreviewProps) => {
   return (
-    <a href={link}>
+    <a href={link} target='_blank' rel='noreferrer'>
       <div
         style={{
           backgroundImage: `url('${image}')`,
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundSize: 'auto',
+          backgroundPosition: 'center',
+          backgroundColor: backColor || 'transparent',
           width: '100%',
           height: '100%',
           borderRadius: '10px',
