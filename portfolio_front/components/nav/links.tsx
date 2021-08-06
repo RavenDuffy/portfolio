@@ -12,7 +12,7 @@ const Links = () => {
       <button onClick={() => scrollToElement('about')}>
         <h2>About</h2>
       </button>
-      <button onClick={() => scrollToElement('')}>
+      <button onClick={() => scrollToElement('projects')}>
         <h2>Projects</h2>
       </button>
       <button onClick={() => scrollToElement('')}>
