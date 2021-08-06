@@ -3,7 +3,7 @@ import { Section } from '../section'
 import { ProjectPreview } from './project-prev'
 import styles from './projects.module.scss'
 
-import logo from '../../public/images/logo/Magpie.png'
+import GitStatsImg from '../../public/images/projects/GithubStats.png'
 
 export const Projects = () => {
   return (
@@ -16,16 +16,12 @@ export const Projects = () => {
       </div>
       <DescBoxWrapper style={{ maxWidth: '1000px' }}>
         <DescBox full>
-          <ProjectPreview name={'hello'} image={logo.src} />
-        </DescBox>
-        <DescBox full>
-          <ProjectPreview name={'hello'} image={logo.src} />
-        </DescBox>
-        <DescBox full>
-          <ProjectPreview name={'hello'} image={logo.src} />
-        </DescBox>
-        <DescBox full>
-          <ProjectPreview name={'hello'} image={logo.src} />
+          <ProjectPreview
+            name={'Github Stats'}
+            image={GitStatsImg.src}
+            link={'https://github.com/RavenDuffy/GitHub-Stats'}
+            backColor={'#0f0f0f'}
+          />
         </DescBox>
       </DescBoxWrapper>
     </Section>
