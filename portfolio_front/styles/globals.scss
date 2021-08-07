@@ -4,6 +4,7 @@
   --main-highlight: #ffc32b;
   --main-focus-back: #20282b;
   --main-back: #151d1f;
+  --trans-back: #151d1ffc;
   --main-white: #ffffff;
   --main-grey: #d4d4d4;
   --scroll-grey: #697174;
@@ -14,7 +15,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
-  background-color: var(--main-back);
+  background-color: var(--trans-back);
 }
 
 * {
