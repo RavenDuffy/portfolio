@@ -24,6 +24,7 @@ $main-focus-back: #20282b;
     font-weight: bolder;
     color: var(--main-highlight);
   }
+
   .links {
     display: flex;
     flex-direction: row;
@@ -39,7 +40,6 @@ $main-focus-back: #20282b;
   .linksMobile {
     position: fixed;
     top: 0;
-    bottom: 0;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -59,6 +59,10 @@ $main-focus-back: #20282b;
     h2:first-child {
       margin-top: 1.5rem;
     }
+  }
+
+  .linksMobile[class*='nav_background'] {
+    bottom: 0;
   }
 
   .background {
