@@ -5,6 +5,7 @@ import styles from './projects.module.scss'
 
 import GitStatsImg from '../../public/images/projects/GithubStats.png'
 import SpaceImg from '../../public/images/projects/s.png'
+import PongImg from '../../public/images/projects/pong.gif'
 
 export const Projects = () => {
   return (
@@ -29,6 +30,14 @@ export const Projects = () => {
             name={'Gravitational Law Simulator'}
             image={SpaceImg.src}
             link={'https://github.com/RavenDuffy/GravitationalLawSim'}
+            backColor={'#000'}
+          />
+        </DescBox>
+        <DescBox full>
+          <ProjectPreview
+            name={'Pong Syllabus'}
+            image={PongImg.src}
+            link={'https://github.com/RavenDuffy/Pong-Syllabus'}
             backColor={'#000'}
           />
         </DescBox>
