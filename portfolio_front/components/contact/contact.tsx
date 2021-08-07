@@ -22,7 +22,7 @@ export const ContactMe = () => {
       <h1 className={styles.contactTitle}>
         Like what you see? Lets get in contact!
       </h1>
-      <form className={styles.formWrapper}>
+      <form className={styles.formWrapper} onSubmit={handleSubmit}>
         <div className={styles.inputLabelWrapper}>
           <label htmlFor='name'>Name</label>
           <input id='name'></input>
@@ -35,10 +35,10 @@ export const ContactMe = () => {
           <label>Project Details</label>
           <textarea id='details'></textarea>
         </div>
+        <button type='submit' className={`${styles.submit} ${styles.spanTwo}`}>
+          Get in Touch
+        </button>
       </form>
-      <button type='submit' className={styles.submit} onClick={handleSubmit}>
-        Get in Touch
-      </button>
     </Section>
   )
 }

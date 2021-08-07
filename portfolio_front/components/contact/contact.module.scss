@@ -24,6 +24,22 @@ $x-small: 540px;
     font-weight: 500;
     margin-bottom: 0.2rem;
   }
+
+  .submit {
+    border: 3px solid #fff;
+    border-radius: 30px;
+    font-size: 1.375rem;
+    padding: 0.2rem 1rem;
+    margin: 0 auto;
+    max-width: 230px;
+  }
+
+  .submit:hover {
+    transition: 0.4s;
+    background-color: var(--main-white);
+    color: var(--main-back);
+    font-weight: 600;
+  }
 }
 
 .inputLabelWrapper {
@@ -52,21 +68,6 @@ $x-small: 540px;
     overflow: auto;
     background-color: var(--main-focus-back);
   }
-}
-
-.submit {
-  margin-top: 2rem;
-  border: 3px solid #fff;
-  border-radius: 30px;
-  font-size: 1.375rem;
-  padding: 0.2rem 0.5rem;
-}
-
-.submit:hover {
-  transition: 0.4s;
-  background-color: var(--main-white);
-  color: var(--main-back);
-  font-weight: 600;
 }
 
 @media screen and (max-width: $x-small) {
