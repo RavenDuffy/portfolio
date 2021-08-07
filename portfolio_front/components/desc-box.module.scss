@@ -9,7 +9,7 @@ $x-small: 540px;
   min-height: 340px;
   border: 1px solid var(--main-grey);
   border-radius: 10px;
-  margin: 35px 0.5rem;
+  margin: 35px 0.5rem 0 0.5rem;
 
   .descImage {
     width: max-content;
@@ -18,7 +18,6 @@ $x-small: 540px;
   }
 
   .descText {
-    padding: 0 2rem;
     white-space: pre-wrap;
     text-align: center;
 
