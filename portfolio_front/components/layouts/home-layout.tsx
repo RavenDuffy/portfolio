@@ -4,6 +4,7 @@ import { Landing } from '../landing/landing'
 import { About } from '../about/about'
 import { Footer } from '../footer/footer'
 import { Projects } from '../projects/projects'
+import { ContactMe } from '../contact/contact'
 
 export const HomeLayout = () => {
   return (
@@ -13,6 +14,7 @@ export const HomeLayout = () => {
         <Landing />
         <About />
         <Projects />
+        <ContactMe />
         <Footer />
       </BasePage>
     </>

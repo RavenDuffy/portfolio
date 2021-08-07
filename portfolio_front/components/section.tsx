@@ -4,6 +4,7 @@ interface SectionProps {
   sectionName: string
   isWidthCapped?: boolean
   children?: React.ReactNode
+  style?: React.CSSProperties
 }
 
 export const Section: React.FC<
@@ -16,6 +17,7 @@ export const Section: React.FC<
       style={{
         minHeight: '100vh',
         maxWidth: props.isWidthCapped ? '946px' : 'unset',
+        ...props.style,
       }}
       className={props.className}
     >

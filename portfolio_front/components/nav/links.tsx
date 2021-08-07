@@ -28,7 +28,7 @@ const Links = ({ isHamburgerOpen, setIsOpen }: NavLinksProps) => {
       </button>
       <button
         onClick={() => {
-          scrollToElement('')
+          scrollToElement('contact')
           setIsOpen && setIsOpen(!isHamburgerOpen)
         }}
       >
