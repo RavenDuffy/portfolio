@@ -1,21 +1,27 @@
 $x-small: 540px;
 
 .header {
-    font-size: 48px;
+  font-size: 3rem;
 }
 
 .blurb {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-.header, .blurb { text-align: center; }
+.header,
+.blurb {
+  text-align: center;
+}
 
 @media screen and (max-width: $x-small) {
-    .header, .blurb { text-align: initial; }
-    .header {
-        font-size: 40px;
-    }
-    .blurb {
-        font-size: 22px;
-    }
+  .header,
+  .blurb {
+    text-align: initial;
+  }
+  .header {
+    font-size: 2.5rem;
+  }
+  .blurb {
+    font-size: 1.375rem;
+  }
 }
