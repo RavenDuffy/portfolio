@@ -2,6 +2,11 @@ import { Section } from '../section'
 import styles from './contact.module.scss'
 
 export const ContactMe = () => {
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
+    console.log(event.target)
+  }
+
   return (
     <Section
       sectionName='contact'
@@ -31,7 +36,7 @@ export const ContactMe = () => {
           <textarea id='details'></textarea>
         </div>
       </form>
-      <button type='submit' className={styles.submit}>
+      <button type='submit' className={styles.submit} onClick={handleSubmit}>
         Get in Touch
       </button>
     </Section>
