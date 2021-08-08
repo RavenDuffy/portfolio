@@ -12,7 +12,7 @@ export const Projects = () => {
     <Section
       sectionName='projects'
       id='projects'
-      isWidthCapped
+      externalPadding
       style={{ backgroundColor: '#20282b' }}
     >
       <div className={styles.titleWrap}>
