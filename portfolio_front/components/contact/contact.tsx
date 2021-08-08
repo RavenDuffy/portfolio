@@ -1,4 +1,10 @@
-import React, { RefObject, useEffect, useMemo, useRef, useState } from 'react'
+import React, {
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
@@ -13,6 +19,13 @@ interface FormRefs {
   name: RefObject<HTMLInputElement>
   email: RefObject<HTMLInputElement>
   details: RefObject<HTMLTextAreaElement>
+}
+
+interface FormValids {
+  [key: string]: boolean
+  name: boolean
+  email: boolean
+  details: boolean
 }
 
 const isEmpty = (field: string | undefined): boolean => {
@@ -32,15 +45,26 @@ export const ContactMe = () => {
     ReactTooltip.hide(formRefs.email.current!)
     ReactTooltip.hide(formRefs.details.current!)
 
+    const newFormData = {
+      name: true,
+      email: true,
+      details: true,
+    }
+
     if (isEmpty(formData?.name)) {
       ReactTooltip.show(formRefs.name.current!)
+      newFormData.name = false
     }
     if (isEmpty(formData?.email) || !isValidEmail(formData?.email)) {
       ReactTooltip.show(formRefs.email.current!)
+      newFormData.email = false
     }
     if (isEmpty(formData?.details)) {
       ReactTooltip.show(formRefs.details.current!)
+      newFormData.details = false
     }
+
+    setFormValids(newFormData)
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLFormElement>) => {
@@ -58,6 +82,17 @@ export const ContactMe = () => {
 
   const [formData, setFormData] = useState<FormData>()
   const [isTooltipMounted, setTooltipMounted] = useState<boolean>(false)
+  const [formValids, setFormValids] = useState<FormValids>({
+    name: false,
+    email: false,
+    details: false,
+  })
+
+  const sendInfo = useCallback(() => {
+    window.open(
+      `mailto:ravend2013@gmail.com?subject=${formData?.name}'s Project Proposal&body=${formData?.details} %0A%0AI'd prefer to be contacted @${formData?.email}`
+    )
+  }, [formData])
 
   const formRefs: FormRefs = {
     name: useRef<HTMLInputElement>(null),
@@ -68,7 +103,9 @@ export const ContactMe = () => {
   useEffect(() => {
     setTooltipMounted(true)
     ReactTooltip.rebuild()
-  }, [isTooltipMounted])
+
+    if (Object.keys(formValids).every((key) => formValids[key])) sendInfo()
+  }, [isTooltipMounted, formValids, sendInfo])
 
   return (
     <Section
