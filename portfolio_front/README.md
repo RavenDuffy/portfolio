@@ -21,3 +21,9 @@ Execute the docker image using:
 ```powershell
 docker run --rm -d  -p 80:3000/tcp portfolio:latest
 ```
+
+## Allow Gmail Access
+
+https://www.google.com/settings/security/lesssecureapps
+
+https://g.co/allowaccess
