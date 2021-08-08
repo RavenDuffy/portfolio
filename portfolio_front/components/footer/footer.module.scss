@@ -28,11 +28,12 @@
 
   .imageLink {
     cursor: pointer;
+    border-radius: 50%;
   }
 
   .imageLink:hover {
     transition: 0.4s;
-    filter: invert(0.3) sepia(1) hue-rotate(20deg);
+    background-color: var(--secondary-highlight);
   }
 }
 
