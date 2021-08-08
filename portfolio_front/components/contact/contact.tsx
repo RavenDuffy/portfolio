@@ -54,7 +54,6 @@ export const ContactMe = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault()
     validateFields()
-    // all fields valid
   }
 
   const [formData, setFormData] = useState<FormData>()
