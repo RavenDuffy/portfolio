@@ -16,15 +16,12 @@ const EmailMe = (formData: FormData) => {
   transporter.verify((error) => {
     if (error) console.error(error)
     else {
-      transporter
-        .sendMail({
-          from: formData.email,
-          to: process.env.EMAIL_USERNAME,
-          subject: `${formData.name}'s Project Proposal`,
-          text: formData.details,
-        })
-        .then((v) => console.log(v))
-        .catch((error) => console.error(error))
+      transporter.sendMail({
+        from: formData.email,
+        to: process.env.EMAIL_USERNAME,
+        subject: `${formData.name}'s Project Proposal`,
+        text: formData.details,
+      })
     }
   })
 }
