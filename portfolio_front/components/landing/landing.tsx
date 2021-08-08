@@ -6,7 +6,7 @@ import { scrollToElement } from '../../utils/scroll-to-element'
 
 export const Landing = () => {
   return (
-    <Section sectionName='landing' className={styles.landing}>
+    <Section sectionName='landing' className={styles.landing} externalPadding>
       <h1>RAVEN</h1>
       <h1>DUFFY</h1>
       <h2>Web Developer</h2>
