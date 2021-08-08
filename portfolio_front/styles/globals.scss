@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  --main-highlight: #FFC32B;
-  --main-focus-back: #20282B;
-  --main-back: #151D1F;
-  --main-white: #FFFFFF;
-  --main-grey: #D4D4D4;
+  --main-highlight: #ffc32b;
+  --secondary-highlight: #8d6c18;
+  --main-focus-back: #20282b;
+  --main-back: #151d1f;
+  --trans-back: #151d1ffc;
+  --main-white: #ffffff;
+  --main-grey: #d4d4d4;
+  --scroll-grey: #697174;
 }
 
 html,
@@ -13,10 +16,32 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
-  background-color: var(--main-back);
+  background-color: var(--trans-back);
+}
+
+* {
+  /* Firefox styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-grey);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  /* Everyone else */
+  overflow: overlay;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  display: initial;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-grey);
 }
 
 button {
+  font-family: 'Roboto';
   background: unset;
   border: unset;
   color: unset;
@@ -28,4 +53,39 @@ button {
 
 button:focus {
   outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--main-white);
+}
+
+p {
+  font-family: Tahoma;
+  color: var(--main-grey);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--main-grey);
+}
+
+.highlightText {
+  color: var(--main-highlight);
+}
+
+#page {
+  @media screen and (max-width: 540px) {
+    align-items: initial !important;
+  }
+}
+
+div[aria-label='section']:last-of-type {
+  margin-bottom: 100px;
 }

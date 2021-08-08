@@ -1,73 +1,88 @@
 // hacky fix for varible opacity
-$main-focus-back: #20282B;
+$main-focus-back: #20282b;
 
 .navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 99;
+  position: sticky;
+  top: 0;
+  background-color: var(--trans-back);
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+    margin: 0 2rem;
+    text-shadow: 1px 1px 5px var(--main-back);
+    cursor: pointer;
+    padding: 1.5rem 0;
+  }
+
+  h1 {
+    font-weight: bolder;
+    color: var(--main-highlight);
+  }
+
+  .links {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1.5rem 0;
+    margin-right: 1rem;
+    margin: auto 0;
 
-    h1, h2 {
-        text-transform: uppercase;
-        margin: 0 2rem;
+    h2 {
+      font-weight: 500;
+      color: var(--main-grey);
+    }
+  }
+
+  .linksMobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    h1,
+    h2 {
+      padding: unset;
     }
 
-    h1 {
-        font-weight: bolder;
-        color: var(--main-highlight);
-    }
-    .links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-right: 1rem;
-        margin: auto 0;
-
-        h2 {
-            font-weight: 500;
-            color: var(--main-grey);
-        }
+    h2 {
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      color: var(--main-grey);
     }
 
-    .linksMobile {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        h2 {
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            color: var(--main-grey);
-        }
-
-        h2:first-child {
-            margin-top: 1.5rem;
-        }
+    h2:first-child {
+      margin-top: 1.5rem;
     }
+  }
 
-    .background {
-        background-color: rgba($main-focus-back, 0.99);
-    }
+  .linksMobile[class*='nav_background'] {
+    bottom: 0;
+  }
 
-    .hamClosed, .hamOpen {
-        height: 30px;
-        width: 30px;
-        margin: 1.5rem 0;
-        margin-right: 2rem;
-        background: no-repeat center;
-        z-index: 1;
-    }
+  .background {
+    background-color: rgba($main-focus-back, 0.99);
+  }
 
-    .hamClosed {
-        background-image: url('../../public/images/HamburgerClosed.svg');
-    }
+  .hamClosed,
+  .hamOpen {
+    height: 30px;
+    width: 30px;
+    margin: 1.5rem 0;
+    margin-right: 2rem;
+    background: no-repeat center;
+  }
 
-    .hamOpen {
-        background-image: url('../../public/images/HamburgerOpen.svg');
-    }
+  .hamClosed {
+    background-image: url('../../public/images/HamburgerClosed.svg');
+  }
+
+  .hamOpen {
+    background-image: url('../../public/images/HamburgerOpen.svg');
+  }
 }
