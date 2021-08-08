@@ -18,6 +18,7 @@ export const Section: React.FC<
       style={{
         minHeight: '100vh',
         maxWidth: props.isWidthCapped ? '946px' : 'unset',
+        width: props.isWidthCapped ? 'unset' : '100%',
         padding: props.externalPadding ? '' : '0 0.5rem',
         paddingBottom: '2rem',
         ...props.style,
