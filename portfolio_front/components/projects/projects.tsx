@@ -9,7 +9,12 @@ import PongImg from '../../public/images/projects/pong.gif'
 
 export const Projects = () => {
   return (
-    <Section sectionName='projects' id='projects' isWidthCapped>
+    <Section
+      sectionName='projects'
+      id='projects'
+      isWidthCapped
+      style={{ backgroundColor: '#20282b' }}
+    >
       <div className={styles.titleWrap}>
         <h1>My Projects</h1>
         <div className={styles.hrWrap}>

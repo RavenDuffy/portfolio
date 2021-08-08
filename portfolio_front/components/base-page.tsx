@@ -11,7 +11,6 @@ export const BasePage = (props: BasePageProps) => {
       <div
         id='page'
         style={{
-          padding: '0 0.5rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

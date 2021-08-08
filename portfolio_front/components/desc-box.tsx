@@ -24,7 +24,10 @@ export const DescBox = ({
   children,
 }: DescBoxProps) => {
   return (
-    <div className={styles.descbox}>
+    <div
+      className={styles.descbox}
+      style={(imageName && { margin: '35px 0.5rem' }) || {}}
+    >
       {imageName && (
         <div className={styles.descImage}>
           <Image
