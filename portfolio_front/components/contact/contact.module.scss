@@ -30,7 +30,7 @@ $x-small: 540px;
     border-radius: 30px;
     font-size: 1.375rem;
     padding: 0.2rem 1rem;
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
     max-width: 230px;
   }
 
@@ -67,6 +67,10 @@ $x-small: 540px;
     outline: none;
     overflow: auto;
     background-color: var(--main-focus-back);
+  }
+
+  div[class*='react_component_tooltip'] {
+    padding: 0.5em;
   }
 }
 
