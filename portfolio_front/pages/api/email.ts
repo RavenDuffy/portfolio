@@ -27,7 +27,11 @@ const EmailMe = (formData: FormData) => {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.body === undefined || req.body === '') {
+  if (
+    req.body === undefined ||
+    req.body === '' ||
+    req.body.formData === undefined
+  ) {
     res.status(400).json({ error: 'Please send a valid body' })
     return
   }
