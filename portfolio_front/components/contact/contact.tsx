@@ -8,8 +8,9 @@ import React, {
 import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
+import axios from 'axios'
 
-interface FormData {
+export interface FormData {
   name?: string
   email?: string
   details?: string
@@ -89,9 +90,9 @@ export const ContactMe = () => {
   })
 
   const sendInfo = useCallback(() => {
-    window.open(
-      `mailto:ravend2013@gmail.com?subject=${formData?.name}'s Project Proposal&body=${formData?.details} %0A%0AI'd prefer to be contacted @${formData?.email}`
-    )
+    axios.post('/api/email', {
+      formData,
+    })
   }, [formData])
 
   const formRefs: FormRefs = {
