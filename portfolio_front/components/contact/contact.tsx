@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useRef, useState } from 'react'
+import React, { RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
@@ -7,6 +7,12 @@ interface FormData {
   name?: string
   email?: string
   details?: string
+}
+
+interface FormRefs {
+  name: RefObject<HTMLInputElement>
+  email: RefObject<HTMLInputElement>
+  details: RefObject<HTMLTextAreaElement>
 }
 
 const isEmpty = (field: string | undefined): boolean => {
@@ -21,6 +27,22 @@ const isValidEmail = (email: string | undefined) => {
 }
 
 export const ContactMe = () => {
+  const validateFields = (): void => {
+    ReactTooltip.hide(formRefs.name.current!)
+    ReactTooltip.hide(formRefs.email.current!)
+    ReactTooltip.hide(formRefs.details.current!)
+
+    if (isEmpty(formData?.name)) {
+      ReactTooltip.show(formRefs.name.current!)
+    }
+    if (isEmpty(formData?.email) || !isValidEmail(formData?.email)) {
+      ReactTooltip.show(formRefs.email.current!)
+    }
+    if (isEmpty(formData?.details)) {
+      ReactTooltip.show(formRefs.details.current!)
+    }
+  }
+
   const handleChange = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormData({
@@ -31,27 +53,23 @@ export const ContactMe = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault()
-    if (!isEmpty(formData?.name)) {
-    }
-    if (!isEmpty(formData?.email) && isValidEmail(formData?.email)) {
-    }
-    if (!isEmpty(formData?.details)) {
-    }
-    console.log(
-      formData,
-      !isEmpty(formData?.email) && isValidEmail(formData?.email)
-    )
-    ReactTooltip.show(nameRef.current)
+    validateFields()
+    // all fields valid
   }
 
   const [formData, setFormData] = useState<FormData>()
   const [isTooltipMounted, setTooltipMounted] = useState<boolean>(false)
-  const nameRef = useRef<any>(null)
+
+  const formRefs: FormRefs = {
+    name: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+    details: useRef<HTMLTextAreaElement>(null),
+  }
 
   useEffect(() => {
     setTooltipMounted(true)
     ReactTooltip.rebuild()
-  }, [])
+  }, [isTooltipMounted])
 
   return (
     <Section
@@ -77,10 +95,10 @@ export const ContactMe = () => {
           <label htmlFor='name'>Name</label>
           <input
             id='name'
-            data-tip='test'
+            data-tip='Please enter your name'
             data-for='nameTip'
             placeholder='my name is...'
-            ref={nameRef as RefObject<HTMLInputElement>}
+            ref={formRefs.name}
           ></input>
           {isTooltipMounted && (
             <ReactTooltip
@@ -89,20 +107,49 @@ export const ContactMe = () => {
               effect='solid'
               type='error'
               offset={{ top: 4 }}
-              event={'none'}
+              event='none'
             />
           )}
         </div>
         <div className={styles.inputLabelWrapper}>
-          <label>Email</label>
-          <input id='email' placeholder='my email is...'></input>
+          <label htmlFor='email'>Email</label>
+          <input
+            id='email'
+            data-tip='Please enter a valid email'
+            data-for='emailTip'
+            placeholder='my email is...'
+            ref={formRefs.email}
+          ></input>
+          {isTooltipMounted && (
+            <ReactTooltip
+              id='emailTip'
+              place='bottom'
+              effect='solid'
+              type='error'
+              offset={{ top: 4 }}
+              event='none'
+            />
+          )}
         </div>
         <div className={`${styles.inputLabelWrapper} ${styles.spanTwo}`}>
-          <label>Project Details</label>
+          <label htmlFor='details'>Project Details</label>
           <textarea
             id='details'
+            data-tip='Please give me some details about your project'
+            data-for='detailsTip'
             placeholder='my project is about...'
+            ref={formRefs.details}
           ></textarea>
+          {isTooltipMounted && (
+            <ReactTooltip
+              id='detailsTip'
+              place='bottom'
+              effect='solid'
+              type='error'
+              offset={{ top: 4 }}
+              event='none'
+            />
+          )}
         </div>
         <button type='submit' className={`${styles.submit} ${styles.spanTwo}`}>
           Get in Touch
