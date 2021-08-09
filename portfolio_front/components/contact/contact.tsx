@@ -130,7 +130,7 @@ export const ContactMe = () => {
       >
         <div className={styles.inputLabelWrapper}>
           <label htmlFor='name'>
-            Name <span className={styles.compulsory}>(compulsory)</span>
+            Name <span className={styles.compulsory}>*</span>
           </label>
           <input
             id='name'
@@ -152,7 +152,7 @@ export const ContactMe = () => {
         </div>
         <div className={styles.inputLabelWrapper}>
           <label htmlFor='email'>
-            Email <span className={styles.compulsory}>(compulsory)</span>
+            Email <span className={styles.compulsory}>*</span>
           </label>
           <input
             id='email'
@@ -172,10 +172,9 @@ export const ContactMe = () => {
             />
           )}
         </div>
-        <div className={`${styles.inputLabelWrapper} ${styles.spanTwo}`}>
+        <div className={`${styles.inputLabelWrapper}`}>
           <label htmlFor='details'>
-            Project Details{' '}
-            <span className={styles.compulsory}>(compulsory)</span>
+            Project Details <span className={styles.compulsory}>*</span>
           </label>
           <textarea
             id='details'
