@@ -9,6 +9,7 @@ import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
 import axios from 'axios'
+import { modal } from '../modal'
 
 export interface FormData {
   name?: string
@@ -68,6 +69,19 @@ export const ContactMe = () => {
     setFormValids(newFormData)
   }
 
+  const wipeForm = (): void => {
+    formRefs.name.current!.value = ''
+    formRefs.email.current!.value = ''
+    formRefs.details.current!.value = ''
+
+    setFormData(undefined)
+    setFormValids({
+      name: false,
+      email: false,
+      details: false,
+    })
+  }
+
   const handleChange = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormData({
@@ -105,7 +119,10 @@ export const ContactMe = () => {
     setTooltipMounted(true)
     ReactTooltip.rebuild()
 
-    if (Object.keys(formValids).every((key) => formValids[key])) sendInfo()
+    if (Object.values(formValids).every((value) => value)) {
+      sendInfo()
+      wipeForm()
+    }
   }, [isTooltipMounted, formValids, sendInfo])
 
   return (
