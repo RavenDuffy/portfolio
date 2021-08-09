@@ -129,7 +129,9 @@ export const ContactMe = () => {
         onChange={handleChange}
       >
         <div className={styles.inputLabelWrapper}>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='name'>
+            Name <span className={styles.compulsory}>(compulsory)</span>
+          </label>
           <input
             id='name'
             data-tip='Please enter your name'
@@ -149,7 +151,9 @@ export const ContactMe = () => {
           )}
         </div>
         <div className={styles.inputLabelWrapper}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>
+            Email <span className={styles.compulsory}>(compulsory)</span>
+          </label>
           <input
             id='email'
             data-tip='Please enter a valid email'
@@ -169,7 +173,10 @@ export const ContactMe = () => {
           )}
         </div>
         <div className={`${styles.inputLabelWrapper} ${styles.spanTwo}`}>
-          <label htmlFor='details'>Project Details</label>
+          <label htmlFor='details'>
+            Project Details{' '}
+            <span className={styles.compulsory}>(compulsory)</span>
+          </label>
           <textarea
             id='details'
             data-tip='Please give me some details about your project'

@@ -72,6 +72,12 @@ $x-small: 540px;
   div[class*='react_component_tooltip'] {
     padding: 0.5em;
   }
+
+  .compulsory {
+    vertical-align: middle;
+    font-size: medium;
+    color: var(--main-error);
+  }
 }
 
 @media screen and (max-width: $x-small) {
