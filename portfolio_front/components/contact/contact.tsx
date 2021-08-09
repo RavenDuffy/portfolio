@@ -69,19 +69,6 @@ export const ContactMe = () => {
     setFormValids(newFormData)
   }
 
-  const wipeForm = (): void => {
-    formRefs.name.current!.value = ''
-    formRefs.email.current!.value = ''
-    formRefs.details.current!.value = ''
-
-    setFormData(undefined)
-    setFormValids({
-      name: false,
-      email: false,
-      details: false,
-    })
-  }
-
   const handleChange = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormData({
@@ -103,17 +90,30 @@ export const ContactMe = () => {
     details: false,
   })
 
+  const formRefs: FormRefs = {
+    name: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+    details: useRef<HTMLTextAreaElement>(null),
+  }
+
   const sendInfo = useCallback(() => {
     axios.post('/api/email', {
       formData,
     })
   }, [formData])
 
-  const formRefs: FormRefs = {
-    name: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-    details: useRef<HTMLTextAreaElement>(null),
-  }
+  const wipeForm = useCallback((): void => {
+    formRefs.name.current!.value = ''
+    formRefs.email.current!.value = ''
+    formRefs.details.current!.value = ''
+
+    setFormData(undefined)
+    setFormValids({
+      name: false,
+      email: false,
+      details: false,
+    })
+  }, [formRefs.name, formRefs.email, formRefs.details])
 
   useEffect(() => {
     setTooltipMounted(true)
@@ -123,7 +123,7 @@ export const ContactMe = () => {
       sendInfo()
       wipeForm()
     }
-  }, [isTooltipMounted, formValids, sendInfo])
+  }, [isTooltipMounted, formValids, sendInfo, wipeForm])
 
   return (
     <Section
