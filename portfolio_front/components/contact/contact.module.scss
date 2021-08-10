@@ -1,4 +1,4 @@
-$x-small: 540px;
+$x-small: 480px;
 
 .contactTitle {
   font-size: 3rem;
@@ -45,6 +45,8 @@ $x-small: 540px;
 .inputLabelWrapper {
   display: flex;
   flex-direction: column;
+  grid-column: span 2;
+  grid-row: span 1;
 
   input,
   textarea {
@@ -71,6 +73,12 @@ $x-small: 540px;
 
   div[class*='react_component_tooltip'] {
     padding: 0.5em;
+  }
+
+  .compulsory {
+    vertical-align: middle;
+    font-size: medium;
+    color: var(--main-error);
   }
 }
 
