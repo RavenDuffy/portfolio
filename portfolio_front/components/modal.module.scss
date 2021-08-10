@@ -1,0 +1,38 @@
+$x-small: 480px;
+
+.overlay {
+  background-color: #000e;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+
+  .thanksText {
+    max-width: 946px;
+    padding: 1ch;
+  }
+}
+
+.tipText {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: small;
+}
+
+@media screen and (max-width: $x-small) {
+  .overlay {
+    align-items: flex-start;
+  }
+
+  .overlay .thanksText {
+    text-align: left;
+  }
+}

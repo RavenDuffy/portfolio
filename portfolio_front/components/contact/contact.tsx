@@ -123,7 +123,7 @@ export const ContactMe = () => {
     ReactTooltip.rebuild()
 
     if (Object.values(formValids).every((value) => value)) {
-      // sendInfo() // ************ UNCOMMENT *****************
+      sendInfo()
       wipeForm()
     }
   }, [isTooltipMounted, formValids, sendInfo, wipeForm])

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import styles from './modal.module.scss'
 
 export interface ModalProps {
   open: boolean
@@ -16,6 +17,11 @@ export const Modal = ({ open, text, setOpen }: ModalProps) => {
   }
 
   useEffect(() => {
+    if (open) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = 'auto'
+  })
+
+  useEffect(() => {
     window.addEventListener('keydown', handleKeyPress)
     window.addEventListener('click', handleClick)
 
@@ -28,19 +34,13 @@ export const Modal = ({ open, text, setOpen }: ModalProps) => {
   return (
     <>
       {open && (
-        <div
-          id='overlay'
-          style={{
-            backgroundColor: '#0007',
-            position: 'fixed',
-            top: '0',
-            bottom: '0',
-            right: '0',
-            left: '0',
-            zIndex: 999,
-          }}
-        >
-          {text}
+        <div id='overlay' className={styles.overlay}>
+          <div className={styles.thanksText}>{text}</div>
+          <div className={styles.tipText}>
+            {window.visualViewport.width > 480
+              ? 'Press escape to close'
+              : 'Tap anywhere to close'}
+          </div>
         </div>
       )}
     </>
