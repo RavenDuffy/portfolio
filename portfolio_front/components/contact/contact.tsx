@@ -9,7 +9,7 @@ import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
 import axios from 'axios'
-import { modal } from '../modal'
+import { Modal } from '../modal'
 
 export interface FormData {
   name?: string
@@ -89,6 +89,7 @@ export const ContactMe = () => {
     email: false,
     details: false,
   })
+  const [sentData, setSentData] = useState<boolean>(false)
 
   const formRefs: FormRefs = {
     name: useRef<HTMLInputElement>(null),
@@ -113,6 +114,8 @@ export const ContactMe = () => {
       email: false,
       details: false,
     })
+
+    setSentData(true)
   }, [formRefs.name, formRefs.email, formRefs.details])
 
   useEffect(() => {
@@ -126,95 +129,104 @@ export const ContactMe = () => {
   }, [isTooltipMounted, formValids, sendInfo, wipeForm])
 
   return (
-    <Section
-      sectionName='contact'
-      id='contact'
-      isWidthCapped
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        minHeight: '80vh',
-      }}
-    >
-      <h1 className={styles.contactTitle}>
-        Like what you see? Lets get in contact!
-      </h1>
-      <form
-        className={styles.formWrapper}
-        onSubmit={handleSubmit}
-        onChange={handleChange}
+    <>
+      <Modal
+        open={sentData}
+        text='Thanks for reaching out, I’ll get back to you as soon as I can.'
+      />
+      <Section
+        sectionName='contact'
+        id='contact'
+        isWidthCapped
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          minHeight: '80vh',
+        }}
       >
-        <div className={styles.inputLabelWrapper}>
-          <label htmlFor='name'>
-            Name <span className={styles.compulsory}>*</span>
-          </label>
-          <input
-            id='name'
-            data-tip='Please enter your name'
-            data-for='nameTip'
-            placeholder='my name is...'
-            ref={formRefs.name}
-          ></input>
-          {isTooltipMounted && (
-            <ReactTooltip
-              id='nameTip'
-              place='bottom'
-              effect='solid'
-              type='error'
-              offset={{ top: 4 }}
-              event='none'
-            />
-          )}
-        </div>
-        <div className={styles.inputLabelWrapper}>
-          <label htmlFor='email'>
-            Email <span className={styles.compulsory}>*</span>
-          </label>
-          <input
-            id='email'
-            data-tip='Please enter a valid email'
-            data-for='emailTip'
-            placeholder='my email is...'
-            ref={formRefs.email}
-          ></input>
-          {isTooltipMounted && (
-            <ReactTooltip
-              id='emailTip'
-              place='bottom'
-              effect='solid'
-              type='error'
-              offset={{ top: 4 }}
-              event='none'
-            />
-          )}
-        </div>
-        <div className={`${styles.inputLabelWrapper}`}>
-          <label htmlFor='details'>
-            Project Details <span className={styles.compulsory}>*</span>
-          </label>
-          <textarea
-            id='details'
-            data-tip='Please give me some details about your project'
-            data-for='detailsTip'
-            placeholder='my project is about...'
-            ref={formRefs.details}
-          ></textarea>
-          {isTooltipMounted && (
-            <ReactTooltip
-              id='detailsTip'
-              place='bottom'
-              effect='solid'
-              type='error'
-              offset={{ top: 4 }}
-              event='none'
-            />
-          )}
-        </div>
-        <button type='submit' className={`${styles.submit} ${styles.spanTwo}`}>
-          Get in Touch
-        </button>
-      </form>
-    </Section>
+        <h1 className={styles.contactTitle}>
+          Like what you see? Lets get in contact!
+        </h1>
+        <form
+          className={styles.formWrapper}
+          onSubmit={handleSubmit}
+          onChange={handleChange}
+        >
+          <div className={styles.inputLabelWrapper}>
+            <label htmlFor='name'>
+              Name <span className={styles.compulsory}>*</span>
+            </label>
+            <input
+              id='name'
+              data-tip='Please enter your name'
+              data-for='nameTip'
+              placeholder='my name is...'
+              ref={formRefs.name}
+            ></input>
+            {isTooltipMounted && (
+              <ReactTooltip
+                id='nameTip'
+                place='bottom'
+                effect='solid'
+                type='error'
+                offset={{ top: 4 }}
+                event='none'
+              />
+            )}
+          </div>
+          <div className={styles.inputLabelWrapper}>
+            <label htmlFor='email'>
+              Email <span className={styles.compulsory}>*</span>
+            </label>
+            <input
+              id='email'
+              data-tip='Please enter a valid email'
+              data-for='emailTip'
+              placeholder='my email is...'
+              ref={formRefs.email}
+            ></input>
+            {isTooltipMounted && (
+              <ReactTooltip
+                id='emailTip'
+                place='bottom'
+                effect='solid'
+                type='error'
+                offset={{ top: 4 }}
+                event='none'
+              />
+            )}
+          </div>
+          <div className={`${styles.inputLabelWrapper}`}>
+            <label htmlFor='details'>
+              Project Details <span className={styles.compulsory}>*</span>
+            </label>
+            <textarea
+              id='details'
+              data-tip='Please give me some details about your project'
+              data-for='detailsTip'
+              placeholder='my project is about...'
+              ref={formRefs.details}
+            ></textarea>
+            {isTooltipMounted && (
+              <ReactTooltip
+                id='detailsTip'
+                place='bottom'
+                effect='solid'
+                type='error'
+                offset={{ top: 4 }}
+                event='none'
+              />
+            )}
+          </div>
+          <button
+            type='submit'
+            className={`${styles.submit} ${styles.spanTwo}`}
+          >
+            Get in Touch
+          </button>
+        </form>
+      </Section>
+    </>
   )
 }
