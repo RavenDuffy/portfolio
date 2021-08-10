@@ -123,7 +123,7 @@ export const ContactMe = () => {
     ReactTooltip.rebuild()
 
     if (Object.values(formValids).every((value) => value)) {
-      sendInfo()
+      // sendInfo() // ************ UNCOMMENT *****************
       wipeForm()
     }
   }, [isTooltipMounted, formValids, sendInfo, wipeForm])
@@ -139,6 +139,7 @@ export const ContactMe = () => {
       <Modal
         open={sentData}
         text='Thanks for reaching out, I’ll get back to you as soon as I can.'
+        setOpen={setSentData}
       />
       <Section
         sectionName='contact'
