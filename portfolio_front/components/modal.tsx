@@ -13,7 +13,7 @@ export const Modal = ({ open, text }: ModalProps) => {
 
   return (
     <>
-      {open ? (
+      {open && (
         <div
           style={{
             backgroundColor: '#0007',
@@ -23,14 +23,10 @@ export const Modal = ({ open, text }: ModalProps) => {
             right: '0',
             left: '0',
             zIndex: 999,
-            overflow: 'auto',
-            overscrollBehavior: 'contain',
           }}
         >
           {text}
         </div>
-      ) : (
-        <></>
       )}
     </>
   )

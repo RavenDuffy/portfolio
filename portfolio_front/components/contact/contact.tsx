@@ -128,6 +128,12 @@ export const ContactMe = () => {
     }
   }, [isTooltipMounted, formValids, sendInfo, wipeForm])
 
+  useEffect(() => {
+    if (sentData) {
+      setTimeout(() => setSentData(false), 5000)
+    }
+  }, [sentData])
+
   return (
     <>
       <Modal
