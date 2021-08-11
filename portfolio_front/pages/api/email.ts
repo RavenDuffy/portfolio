@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
-import { FormData } from '../../components/contact/contact'
+import { FormData } from '../../components/contact/contact.d'
 
 const EmailMe = (formData: FormData) => {
   const transporter = nodemailer.createTransport({
