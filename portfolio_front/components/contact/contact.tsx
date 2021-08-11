@@ -1,45 +1,11 @@
-import React, {
-  RefObject,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Section } from '../section'
 import styles from './contact.module.scss'
 import ReactTooltip from 'react-tooltip'
 import axios from 'axios'
 import { Modal } from '../modal'
-
-export interface FormData {
-  name?: string
-  email?: string
-  details?: string
-}
-
-interface FormRefs {
-  name: RefObject<HTMLInputElement>
-  email: RefObject<HTMLInputElement>
-  details: RefObject<HTMLTextAreaElement>
-}
-
-interface FormValids {
-  [key: string]: boolean
-  name: boolean
-  email: boolean
-  details: boolean
-}
-
-const isEmpty = (field: string | undefined): boolean => {
-  return field === undefined || field === ''
-}
-
-const isValidEmail = (email: string | undefined) => {
-  if (email === undefined) return false
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return re.test(email)
-}
+import { isEmpty, isValidEmail } from '../../utils/general'
+import { FormData, FormRefs, FormValids } from './contact.d'
 
 export const ContactMe = () => {
   const validateFields = (): void => {
@@ -92,9 +58,9 @@ export const ContactMe = () => {
   const [sentData, setSentData] = useState<boolean>(false)
 
   const formRefs: FormRefs = {
-    name: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-    details: useRef<HTMLTextAreaElement>(null),
+    name: useRef(null),
+    email: useRef(null),
+    details: useRef(null),
   }
 
   const sendInfo = useCallback(() => {
