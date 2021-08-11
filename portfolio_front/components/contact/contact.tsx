@@ -92,9 +92,9 @@ export const ContactMe = () => {
   const [sentData, setSentData] = useState<boolean>(false)
 
   const formRefs: FormRefs = {
-    name: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-    details: useRef<HTMLTextAreaElement>(null),
+    name: useRef(null),
+    email: useRef(null),
+    details: useRef(null),
   }
 
   const sendInfo = useCallback(() => {
