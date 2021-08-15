@@ -16,12 +16,6 @@ This frontend is run on [Docker](https://hub.docker.com/repository/docker/magpie
 docker build --pull --rm -f "portfolio_front\Dockerfile" -t portfolio:latest "portfolio_front"
 ```
 
-Execute the docker image using:
-
-```powershell
-docker run --rm -d  -p 80:3000/tcp portfolio:latest
-```
-
 ## Allow Gmail Access
 
 https://www.google.com/settings/security/lesssecureapps

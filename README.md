@@ -1,8 +1,6 @@
 # Portfolio
 
-My [portfolio in development](http://188.166.151.14/)
-
-My old portfolio [website](https://ravenduffy.io).
+[ravenduffy.io](http://ravenduffy.io)
 
 ## Structure
 
