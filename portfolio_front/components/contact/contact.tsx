@@ -115,7 +115,7 @@ export const ContactMe = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          minHeight: '80vh',
+          minHeight: 'calc(100vh - 120px)',
         }}
       >
         <h1 className={styles.contactTitle}>
